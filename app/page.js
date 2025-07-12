@@ -1,12 +1,12 @@
 import fs from 'fs/promises';
 import path from 'path';
-import ChartIndexBar from './ChartIndexBar';
-import ChartTagBar from './ChartTagBar';
-import ChartIndexTagStackedBar from './ChartIndexTagStackedBar'; // new chart
+import ChartIndexBar from './chart/ChartIndexBar';
+import ChartTagBar from './chart/ChartTagBar';
+import ChartIndexTagStackedBar from './chart/ChartIndexTagStackedBar'; // new chart
 
 
 export default async function ChartPage() {
-    const filePath = path.join(process.cwd(), 'data', 'problems.json');
+    const filePath = path.join(process.cwd(), 'public/data', 'problems.json');
     const fileData = await fs.readFile(filePath, 'utf-8');
     const jsonData = JSON.parse(fileData);
 
